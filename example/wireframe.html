@@ -29,12 +29,12 @@
         <button onclick="wireframe(true)">线框图开启</button>
         <button onclick="wireframe(false)">线框图关闭</button>
     </div>
-    <script src="../dist/modelTool.js"></script>
+    <script src="./js/bustard.min.js"></script>
     <script>
         var container = document.getElementById("container")
         var modelTool = new Bustard(container)
         var loader = modelTool.use(new Bustard.Loader())
-        loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+        loader.gltfLoadByUrl('http://119.3.107.239:3035/model/403.glb')
 
         function wireframe(isOpen) {
             let tool = modelTool.use(new Bustard.Wireframe())

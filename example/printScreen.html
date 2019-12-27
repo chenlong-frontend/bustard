@@ -29,13 +29,13 @@
     <button onclick="printScreen()">截图</button>
     <div style="display:none"><a id="jphidden">截屏派单下载隐藏域</a></div>
   </div>
-  <script src="../dist/modelTool.js"></script>
+  <script src="./js/bustard.min.js"></script>
   <script src="js/html2canvas.js"></script>
   <script>
     var container = document.getElementById("container")
     var modelTool = new Bustard(container)
     var loader = modelTool.use(new Bustard.Loader())
-    loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+    loader.gltfLoadByUrl('http://119.3.107.239:3035/model/403.glb')
 
     function printScreen(e) {
       html2canvas(document.querySelector("#container").childNodes[0]).then(canvas => {

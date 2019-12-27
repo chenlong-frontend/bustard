@@ -28,12 +28,12 @@
     <div class="tool-bar">
         <button onclick="stop()">复原</button>
     </div>
-    <script src="../dist/modelTool.js"></script>
+    <script src="./js/bustard.min.js"></script>
     <script>
         var container = document.getElementById("container")
         var modelTool = new Bustard(container)
         var loader = modelTool.use(new Bustard.Loader())
-        loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+        loader.gltfLoadByUrl('http://119.3.107.239:3035/model/403.glb')
         var modelColor = modelTool.use(new Bustard.Color())
 
         function stop() {

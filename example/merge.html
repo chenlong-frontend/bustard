@@ -26,23 +26,23 @@
 <body>
     <div id="container"></div>
     <script src="./js//inflate.min.js"></script>
-    <script src="../dist/modelTool.js"></script>
+    <script src="./js/bustard.min.js"></script>
     <script>
         // 合模先在threeedit里进行编辑移动，再进行合模
         var container = document.getElementById("container")
         var modelTool = new Bustard(container)
-        modelTool.loadFbxByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao_dixing.fbx', scene => {
+        modelTool.loadFbxByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao_dixing.fbx', scene => {
             scene.position.set(38.674, 16.627, -2425.426)
             scene.rotation.set(-Math.PI / 2, 0, (Math.PI / 180) * -126.11)
             scene.scale.set(1.01, 1.015, 1.015)
         })
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao1.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao2.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao3.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao4.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-jiankong.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-dun3.glb')
-        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-dun9.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao1.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao2.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao3.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao4.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao-jiankong.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao-dun3.glb')
+        modelTool.loadGltfByUrl('http://119.3.107.239:3035/model/xuyi/xuyiqiao-dun9.glb')
     </script>
 </body>
 
