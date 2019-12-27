@@ -1,0 +1,36 @@
+{
+  "name": "webpackbuildts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --config webpack.dev.js --watch --progress",
+    "build": "webpack --config webpack.prod.js",
+    "tsc": "rm -rf lib && tsc --declaration true --outDir ./lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^11.9.4",
+    "@types/webpack": "^4.4.24",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/runtime": "^7.3.1",
+    "@types/lodash": "^4.14.121",
+    "@types/three": "^0.93.22",
+    "camera-controls": "^1.10.8",
+    "lodash": "^4.17.11",
+    "three": "^0.101.1"
+  }
+}

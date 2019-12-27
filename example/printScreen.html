@@ -1,0 +1,55 @@
+<Html lang="zh">
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>测量</title>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .tool-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 25px;
+    }
+
+    .tool-bar button {
+      padding: 5px 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div class="tool-bar">
+    <button onclick="printScreen()">截图</button>
+    <div style="display:none"><a id="jphidden">截屏派单下载隐藏域</a></div>
+  </div>
+  <script src="../dist/modelTool.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <script>
+    var container = document.getElementById("container")
+    var modelTool = new Bustard(container)
+    var loader = modelTool.use(new Bustard.Loader())
+    loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+
+    function printScreen(e) {
+      html2canvas(document.querySelector("#container").childNodes[0]).then(canvas => {
+        console.log(document.querySelector("#container").childNodes[0].toDataURL("image/png"), 'base64')
+        var imageUrl = canvas.toDataURL("image/png")
+        var image = document.createElement('img')
+        image.setAttribute('src', imageUrl)
+        image.setAttribute('width', '400px')
+        image.setAttribute('height', '300px')
+        console.log(image, 'image')
+        document.body.appendChild(image)
+      });
+    }
+  </script>
+</body>
+
+</Html>

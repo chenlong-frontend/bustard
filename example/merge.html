@@ -1,0 +1,49 @@
+<Html lang="zh">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>合模</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tool-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px;
+        }
+
+        .tool-bar button {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="./js//inflate.min.js"></script>
+    <script src="../dist/modelTool.js"></script>
+    <script>
+        // 合模先在threeedit里进行编辑移动，再进行合模
+        var container = document.getElementById("container")
+        var modelTool = new Bustard(container)
+        modelTool.loadFbxByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao_dixing.fbx', scene => {
+            scene.position.set(38.674, 16.627, -2425.426)
+            scene.rotation.set(-Math.PI / 2, 0, (Math.PI / 180) * -126.11)
+            scene.scale.set(1.01, 1.015, 1.015)
+        })
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao1.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao2.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao3.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao4.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-jiankong.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-dun3.glb')
+        modelTool.loadGltfByUrl('http://58.208.85.42:4000/xuyi/xuyiqiao-dun9.glb')
+    </script>
+</body>
+
+</Html>

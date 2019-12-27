@@ -1,0 +1,79 @@
+<Html lang="zh">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>标记</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tool-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px;
+        }
+
+        .tool-bar button {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div class="tool-bar">
+        <button onclick="mark()">单标记</button>
+        <button onclick="marks()">多标记</button>
+        <button onclick="getmark()">获取所有标记</button>
+        <button onclick="showMark()">显示标记</button>
+        <button onclick="delMark()">清除所有标记</button>
+    </div>
+    <script src="../dist/modelTool.js"></script>
+    <script>
+        var container = document.getElementById("container")
+        var modelTool = new Bustard(container)
+        var loader = modelTool.use(new Bustard.Loader())
+        loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+        let tool = modelTool.use(new Bustard.Mark())
+
+        function mark() {
+            tool.multiple = false
+        }
+
+        function marks() {
+            tool.multiple = true
+        }
+
+        function getmark() {
+            console.log(tool.getAllMark())
+            console.log(tool.getAllMarkData())
+        }
+
+        function showMark() {
+            tool.showMark([{
+                delEnable: true,
+                position: {
+                    x: -1.4723706663385823,
+                    y: 1.6584322196435415,
+                    z: 8.992819001490117
+                },
+                worldNormal: {
+                    x: -2.240720646794571,
+                    y: 1.7020310980185736,
+                    z: 8.992819001490115
+                },
+                name: '123'
+            }])
+        }
+
+        function delMark() {
+            tool.clearAllMark()
+        }
+    </script>
+</body>
+
+</Html>

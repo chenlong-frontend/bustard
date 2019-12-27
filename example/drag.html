@@ -1,0 +1,45 @@
+<Html lang="zh">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>拖拽</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tool-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px;
+        }
+
+        .tool-bar button {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div class="tool-bar">
+        <button onclick="drag()">拖拽</button>
+    </div>
+    <script src="../dist/modelTool.js"></script>
+    <script>
+        var container = document.getElementById("container")
+        var modelTool = new Bustard(container)
+        var loader = modelTool.use(new Bustard.Loader())
+        loader.gltfLoadByUrl('http://58.208.85.42:4000/403.glb')
+
+        function drag() {
+            let tool = modelTool.use(new Bustard.Drag())
+            tool.startDrag()
+        }
+    </script>
+</body>
+
+</Html>

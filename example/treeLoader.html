@@ -1,0 +1,50 @@
+<Html lang="zh">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>树加载</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tool-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px;
+        }
+
+        .tool-bar button {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="../dist/modelTool.js"></script>
+    <script>
+        var container = document.getElementById("container")
+        var modelTool = new Bustard(container)
+        var loader = modelTool.use(new Bustard.Loader())
+        var treeLoader = modelTool.use(new Bustard.TreeLoader('http://111.231.56.231:4000/api/v1',
+            'ar.ifc.bin',
+            'house'))
+        treeLoader.loadModelByCodes(["02.01", "02.01.01", "02.01.01.00", "02.01.01.01", "02.01.01.02", "02.01.01.03"])
+            .then(v => {
+                _.forEach(v, url => {
+                    loader.gltfLoadByUrl(url)
+                })
+            })
+        treeLoader.loadModelByIds(["ar.ifc.bin|225", "ar.ifc.bin|16917"]).then(v => {
+            _.forEach(v, url => {
+                loader.gltfLoadByUrl(url)
+            })
+        })
+    </script>
+</body>
+
+</Html>
